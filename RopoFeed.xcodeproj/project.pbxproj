@@ -23,6 +23,7 @@
 		9B6FC7471CE7433900ED1613 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FC7451CE7433900ED1613 /* UserTableViewCell.xib */; };
 		9B6FC74A1CE7434C00ED1613 /* StoryFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FC7481CE7434C00ED1613 /* StoryFeedTableViewCell.swift */; };
 		9B6FC74B1CE7434C00ED1613 /* StoryFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FC7491CE7434C00ED1613 /* StoryFeedTableViewCell.xib */; };
+		9B6FC74D1CE7598900ED1613 /* GenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FC74C1CE7598900ED1613 /* GenericView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9B6FC7451CE7433900ED1613 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		9B6FC7481CE7434C00ED1613 /* StoryFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryFeedTableViewCell.swift; sourceTree = "<group>"; };
 		9B6FC7491CE7434C00ED1613 /* StoryFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryFeedTableViewCell.xib; sourceTree = "<group>"; };
+		9B6FC74C1CE7598900ED1613 /* GenericView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericView.swift; sourceTree = "<group>"; };
 		F7957D434A189F53BB84D5C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 				9B6FC7451CE7433900ED1613 /* UserTableViewCell.xib */,
 				9B6FC7481CE7434C00ED1613 /* StoryFeedTableViewCell.swift */,
 				9B6FC7491CE7434C00ED1613 /* StoryFeedTableViewCell.xib */,
+				9B6FC74C1CE7598900ED1613 /* GenericView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6FC74D1CE7598900ED1613 /* GenericView.swift in Sources */,
 				9B4110CD1CE730DA00C783C6 /* Feed.swift in Sources */,
 				9B6FC74A1CE7434C00ED1613 /* StoryFeedTableViewCell.swift in Sources */,
 				9B4110921CE703A700C783C6 /* ViewController.swift in Sources */,

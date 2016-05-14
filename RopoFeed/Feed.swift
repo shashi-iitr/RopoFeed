@@ -21,7 +21,7 @@ class Feed: Mappable {
     var isFollowing: Bool?
     var createdOn: Int?
     var verb: String?
-    var description: String?
+    var desc: String?
     var userId: String?
     var url: String?
     var type: String?
@@ -29,6 +29,7 @@ class Feed: Mappable {
     var likeFlag: Bool?
     var likesCount: Int?
     var commenCount: Int?
+    var si: String?
     
     
     required init?(_ map: Map) { }
@@ -45,7 +46,7 @@ class Feed: Mappable {
         isFollowing <- map["is_following"]
         createdOn   <- map["createdOn"]
         verb        <- map["verb"]
-        description <- map["description"]
+        desc        <- map["description"]
         userId      <- map["db"]
         url         <- map["url"]
         type        <- map["type"]
@@ -53,6 +54,7 @@ class Feed: Mappable {
         likeFlag    <- map["like_flag"]
         likesCount  <- map["likes_count"]
         commenCount <- map["comment_count"]
+        si          <- map["si"]
         
     }
 }
