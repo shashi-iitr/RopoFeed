@@ -149,3 +149,18 @@ extension UIImageView {
         }
     }
 }
+
+extension UIViewController {
+    func openImageViewer(fromImageView imageView: UIImageView) {
+        let imageInfo = JTSImageInfo()
+        imageInfo.image = imageView.image
+        imageInfo.referenceRect = imageView.frame
+        imageInfo.referenceView = imageView
+        
+        // Setup view controller
+        let imageViewer = JTSImageViewController(imageInfo: imageInfo, mode: .Image, backgroundStyle: .Blurred)
+        
+        // Present the view controller.
+        imageViewer.showFromViewController(self, transition: .FromOriginalPosition)
+    }
+}

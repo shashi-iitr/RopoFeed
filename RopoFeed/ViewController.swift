@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, StoryFeedTableViewCellDelegate {
     
     var shilpaShetty: Feed?
     var nargisFakhri: Feed?
@@ -59,6 +59,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return FeedFetcher.sharedInstance.fetchedFeeds()
     }
     
+    // MARK: StoryFeedTableViewCellDelegate
+    
+    func storyCell(cell: StoryFeedTableViewCell, didTapFollowButton sender: UIButton) {
+    
+    }
+    
+    func storyCell(cell: StoryFeedTableViewCell, didTapImageView imageView: UIImageView) {
+        openImageViewer(fromImageView: imageView)
+    }
+    
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +78,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: StoryFeedTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.configureCell(storyFeeds[indexPath.row])
+        cell.selectionStyle = .None
+        cell.delegate = self
         
         return cell
     }
