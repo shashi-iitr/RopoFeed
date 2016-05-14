@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B4110901CE703A700C783C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41108F1CE703A700C783C6 /* AppDelegate.swift */; };
+		9B4110921CE703A700C783C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4110911CE703A700C783C6 /* ViewController.swift */; };
+		9B4110951CE703A700C783C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4110931CE703A700C783C6 /* Main.storyboard */; };
+		9B4110971CE703A700C783C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B4110961CE703A700C783C6 /* Assets.xcassets */; };
+		9B41109A1CE703A700C783C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4110981CE703A700C783C6 /* LaunchScreen.storyboard */; };
+		9B4110A51CE703A700C783C6 /* RopoFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4110A41CE703A700C783C6 /* RopoFeedTests.swift */; };
+		9B4110B01CE703A700C783C6 /* RopoFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4110AF1CE703A700C783C6 /* RopoFeedUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B4110A11CE703A700C783C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B4110841CE703A700C783C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B41108B1CE703A700C783C6;
+			remoteInfo = RopoFeed;
+		};
+		9B4110AC1CE703A700C783C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B4110841CE703A700C783C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B41108B1CE703A700C783C6;
+			remoteInfo = RopoFeed;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9B41108C1CE703A700C783C6 /* RopoFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RopoFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B41108F1CE703A700C783C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9B4110911CE703A700C783C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9B4110941CE703A700C783C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B4110961CE703A700C783C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B4110991CE703A700C783C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B41109B1CE703A700C783C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B4110A01CE703A700C783C6 /* RopoFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RopoFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4110A41CE703A700C783C6 /* RopoFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RopoFeedTests.swift; sourceTree = "<group>"; };
+		9B4110A61CE703A700C783C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B4110AB1CE703A700C783C6 /* RopoFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RopoFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4110AF1CE703A700C783C6 /* RopoFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RopoFeedUITests.swift; sourceTree = "<group>"; };
+		9B4110B11CE703A700C783C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B4110891CE703A700C783C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B41109D1CE703A700C783C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B4110A81CE703A700C783C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B4110831CE703A700C783C6 = {
+			isa = PBXGroup;
+			children = (
+				9B41108E1CE703A700C783C6 /* RopoFeed */,
+				9B4110A31CE703A700C783C6 /* RopoFeedTests */,
+				9B4110AE1CE703A700C783C6 /* RopoFeedUITests */,
+				9B41108D1CE703A700C783C6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B41108D1CE703A700C783C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B41108C1CE703A700C783C6 /* RopoFeed.app */,
+				9B4110A01CE703A700C783C6 /* RopoFeedTests.xctest */,
+				9B4110AB1CE703A700C783C6 /* RopoFeedUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B41108E1CE703A700C783C6 /* RopoFeed */ = {
+			isa = PBXGroup;
+			children = (
+				9B41108F1CE703A700C783C6 /* AppDelegate.swift */,
+				9B4110911CE703A700C783C6 /* ViewController.swift */,
+				9B4110931CE703A700C783C6 /* Main.storyboard */,
+				9B4110961CE703A700C783C6 /* Assets.xcassets */,
+				9B4110981CE703A700C783C6 /* LaunchScreen.storyboard */,
+				9B41109B1CE703A700C783C6 /* Info.plist */,
+			);
+			path = RopoFeed;
+			sourceTree = "<group>";
+		};
+		9B4110A31CE703A700C783C6 /* RopoFeedTests */ = {
+			isa = PBXGroup;
+			children = (
+				9B4110A41CE703A700C783C6 /* RopoFeedTests.swift */,
+				9B4110A61CE703A700C783C6 /* Info.plist */,
+			);
+			path = RopoFeedTests;
+			sourceTree = "<group>";
+		};
+		9B4110AE1CE703A700C783C6 /* RopoFeedUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9B4110AF1CE703A700C783C6 /* RopoFeedUITests.swift */,
+				9B4110B11CE703A700C783C6 /* Info.plist */,
+			);
+			path = RopoFeedUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B41108B1CE703A700C783C6 /* RopoFeed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B4110B41CE703A700C783C6 /* Build configuration list for PBXNativeTarget "RopoFeed" */;
+			buildPhases = (
+				9B4110881CE703A700C783C6 /* Sources */,
+				9B4110891CE703A700C783C6 /* Frameworks */,
+				9B41108A1CE703A700C783C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RopoFeed;
+			productName = RopoFeed;
+			productReference = 9B41108C1CE703A700C783C6 /* RopoFeed.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B41109F1CE703A700C783C6 /* RopoFeedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B4110B71CE703A700C783C6 /* Build configuration list for PBXNativeTarget "RopoFeedTests" */;
+			buildPhases = (
+				9B41109C1CE703A700C783C6 /* Sources */,
+				9B41109D1CE703A700C783C6 /* Frameworks */,
+				9B41109E1CE703A700C783C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B4110A21CE703A700C783C6 /* PBXTargetDependency */,
+			);
+			name = RopoFeedTests;
+			productName = RopoFeedTests;
+			productReference = 9B4110A01CE703A700C783C6 /* RopoFeedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9B4110AA1CE703A700C783C6 /* RopoFeedUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B4110BA1CE703A700C783C6 /* Build configuration list for PBXNativeTarget "RopoFeedUITests" */;
+			buildPhases = (
+				9B4110A71CE703A700C783C6 /* Sources */,
+				9B4110A81CE703A700C783C6 /* Frameworks */,
+				9B4110A91CE703A700C783C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B4110AD1CE703A700C783C6 /* PBXTargetDependency */,
+			);
+			name = RopoFeedUITests;
+			productName = RopoFeedUITests;
+			productReference = 9B4110AB1CE703A700C783C6 /* RopoFeedUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B4110841CE703A700C783C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Shashi;
+				TargetAttributes = {
+					9B41108B1CE703A700C783C6 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					9B41109F1CE703A700C783C6 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9B41108B1CE703A700C783C6;
+					};
+					9B4110AA1CE703A700C783C6 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9B41108B1CE703A700C783C6;
+					};
+				};
+			};
+			buildConfigurationList = 9B4110871CE703A700C783C6 /* Build configuration list for PBXProject "RopoFeed" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B4110831CE703A700C783C6;
+			productRefGroup = 9B41108D1CE703A700C783C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B41108B1CE703A700C783C6 /* RopoFeed */,
+				9B41109F1CE703A700C783C6 /* RopoFeedTests */,
+				9B4110AA1CE703A700C783C6 /* RopoFeedUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B41108A1CE703A700C783C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B41109A1CE703A700C783C6 /* LaunchScreen.storyboard in Resources */,
+				9B4110971CE703A700C783C6 /* Assets.xcassets in Resources */,
+				9B4110951CE703A700C783C6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B41109E1CE703A700C783C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B4110A91CE703A700C783C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B4110881CE703A700C783C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B4110921CE703A700C783C6 /* ViewController.swift in Sources */,
+				9B4110901CE703A700C783C6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B41109C1CE703A700C783C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B4110A51CE703A700C783C6 /* RopoFeedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B4110A71CE703A700C783C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B4110B01CE703A700C783C6 /* RopoFeedUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B4110A21CE703A700C783C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B41108B1CE703A700C783C6 /* RopoFeed */;
+			targetProxy = 9B4110A11CE703A700C783C6 /* PBXContainerItemProxy */;
+		};
+		9B4110AD1CE703A700C783C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B41108B1CE703A700C783C6 /* RopoFeed */;
+			targetProxy = 9B4110AC1CE703A700C783C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9B4110931CE703A700C783C6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B4110941CE703A700C783C6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9B4110981CE703A700C783C6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B4110991CE703A700C783C6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B4110B21CE703A700C783C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B4110B31CE703A700C783C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B4110B51CE703A700C783C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RopoFeed/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shashi.RopoFeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9B4110B61CE703A700C783C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RopoFeed/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shashi.RopoFeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9B4110B81CE703A700C783C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RopoFeedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shashi.RopoFeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RopoFeed.app/RopoFeed";
+			};
+			name = Debug;
+		};
+		9B4110B91CE703A700C783C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RopoFeedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shashi.RopoFeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RopoFeed.app/RopoFeed";
+			};
+			name = Release;
+		};
+		9B4110BB1CE703A700C783C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RopoFeedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shashi.RopoFeedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RopoFeed;
+			};
+			name = Debug;
+		};
+		9B4110BC1CE703A700C783C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RopoFeedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shashi.RopoFeedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RopoFeed;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B4110871CE703A700C783C6 /* Build configuration list for PBXProject "RopoFeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B4110B21CE703A700C783C6 /* Debug */,
+				9B4110B31CE703A700C783C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B4110B41CE703A700C783C6 /* Build configuration list for PBXNativeTarget "RopoFeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B4110B51CE703A700C783C6 /* Debug */,
+				9B4110B61CE703A700C783C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9B4110B71CE703A700C783C6 /* Build configuration list for PBXNativeTarget "RopoFeedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B4110B81CE703A700C783C6 /* Debug */,
+				9B4110B91CE703A700C783C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9B4110BA1CE703A700C783C6 /* Build configuration list for PBXNativeTarget "RopoFeedUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B4110BB1CE703A700C783C6 /* Debug */,
+				9B4110BC1CE703A700C783C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B4110841CE703A700C783C6 /* Project object */;
+}
