@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RopoFeed/ViewController.swift"
-            timestampString = "484926983.291641"
+            timestampString = "484929946.6483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "configureStories()"
             landmarkType = "5">
          </BreakpointContent>

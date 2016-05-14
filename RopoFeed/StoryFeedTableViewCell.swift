@@ -56,7 +56,7 @@ class StoryFeedTableViewCell: UITableViewCell {
     func handleImageViewTapGesture(gesture: UIGestureRecognizer) -> Void {
         delegate?.storyCell(self, didTapImageView: storyImageView)
     }
-    
+        
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

@@ -21,8 +21,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         aTableView.frame = CGRectMake(0, 0, self.screenSize.width, self.screenSize.height)
         aTableView.separatorStyle = .None
         aTableView.rowHeight = UITableViewAutomaticDimension
-        aTableView.estimatedRowHeight = 375
+        aTableView.estimatedRowHeight = 169
         aTableView.register(StoryFeedTableViewCell.self)
+        aTableView.register(UserTableViewCell.self)
         self.view.addSubview(aTableView)
         return aTableView
     }()
@@ -72,16 +73,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return storyFeeds.count
+        return storyFeeds.count + 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: StoryFeedTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.configureCell(storyFeeds[indexPath.row])
-        cell.selectionStyle = .None
-        cell.delegate = self
+        if indexPath.row == 0 {
+            let cell: UserTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configureCell(shilpaShetty!)
+            cell.selectionStyle = .None
+            
+            return cell
+
+        } else if indexPath.row == 1 {
+            let cell: UserTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configureCell(nargisFakhri!)
+            cell.selectionStyle = .None
+            
+            return cell
+
+        } else {
+            let cell: StoryFeedTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configureCell(storyFeeds[indexPath.row - 2])
+            cell.selectionStyle = .None
+            cell.delegate = self
+            
+            return cell
+        }
         
-        return cell
+        return UITableViewCell.init()
     }
     
     // MARK: - UITableViewDelegate
