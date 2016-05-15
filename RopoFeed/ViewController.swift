@@ -55,10 +55,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    var feeds: [Feed] {
-        return FeedFetcher.sharedInstance.fetchedFeeds()
-    }
-    
     // MARK: StoryDescriptionControllerDelegate
     
     func storyDescriptionController(controller: StoryDescriptionController, didTapFollowButton sender: UIButton, feed: Feed) -> Void {
