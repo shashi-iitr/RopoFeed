@@ -20,10 +20,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         aTableView.dataSource = self
         aTableView.frame = CGRectMake(0, 0, self.screenSize.width, self.screenSize.height)
         aTableView.separatorStyle = .None
-        aTableView.rowHeight = UITableViewAutomaticDimension
         aTableView.estimatedRowHeight = 169
-        aTableView.register(StoryFeedTableViewCell.self)
-        aTableView.register(UserTableViewCell.self)
+        aTableView.registerNib(StoryFeedTableViewCell.self)
+        aTableView.registerNib(UserTableViewCell.self)
+        aTableView.registerClass(EmptyCell.self)
         self.view.addSubview(aTableView)
         return aTableView
     }()
@@ -73,40 +73,69 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return storyFeeds.count + 2
+        return (storyFeeds.count + 2) * 2 - 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell: UserTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.configureCell(shilpaShetty!)
+        if indexPath.row % 2 != 0 {
+            let cell: EmptyCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.selectionStyle = .None
             
             return cell
-
-        } else if indexPath.row == 1 {
-            let cell: UserTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.configureCell(nargisFakhri!)
-            cell.selectionStyle = .None
-            
-            return cell
-
         } else {
-            let cell: StoryFeedTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.configureCell(storyFeeds[indexPath.row - 2])
-            cell.selectionStyle = .None
-            cell.delegate = self
-            
-            return cell
+            if indexPath.row == 0 {
+                let cell: UserTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+                cell.configureCell(shilpaShetty!)
+                cell.selectionStyle = .None
+                
+                return cell
+                
+            } else if indexPath.row == 2 {
+                let cell: UserTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+                cell.configureCell(nargisFakhri!)
+                cell.selectionStyle = .None
+                
+                return cell
+                
+            } else {
+                let cell: StoryFeedTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+                cell.configureCell(storyFeeds[(indexPath.row / 2) - 2])
+                cell.selectionStyle = .None
+                cell.delegate = self
+                
+                return cell
+            }
         }
         
         return UITableViewCell.init()
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row % 2 != 0 {
+            return EmptyCell.height()
+        } else {
+            return UITableViewAutomaticDimension
+        }
+    }
+    
     // MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("Selected row \(indexPath.row)")
+        let mainStoryboard: UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let storyVC: StoryDescriptionController = mainStoryboard.instantiateViewControllerWithIdentifier("StoryDescriptionController") as! StoryDescriptionController
+        let navC: UINavigationController = UINavigationController.init(rootViewController: storyVC)
+        var feed: Feed?
+        if indexPath.row % 2 == 0 {
+            if indexPath.row == 0 {
+                feed = shilpaShetty
+            } else if indexPath.row == 2 {
+                feed = nargisFakhri
+            } else {
+                feed = storyFeeds[(indexPath.row / 2) - 2]
+            }
+        }
+        storyVC.feed = feed
+        self.presentViewController(navC, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

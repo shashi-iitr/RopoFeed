@@ -69,11 +69,11 @@ extension UITableViewCell : NibLoadableView {
 
 extension UITableView {
     
-    func register<T: UITableViewCell where T: ReusableView>(_: T.Type) {
+    func registerClass<T: UITableViewCell where T: ReusableView>(_: T.Type) {
         registerClass(T.self, forCellReuseIdentifier: T.defaultReuseIdentifier)
     }
     
-    func register<T: UITableViewCell where T: ReusableView, T: NibLoadableView>(_: T.Type) {
+    func registerNib<T: UITableViewCell where T: ReusableView, T: NibLoadableView>(_: T.Type) {
         //        let bundle = NSBundle(forClass: T.self)
         let nib = UINib(nibName: T.nibName, bundle: nil)
         registerNib(nib, forCellReuseIdentifier: T.defaultReuseIdentifier)

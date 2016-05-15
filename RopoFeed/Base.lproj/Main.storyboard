@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -21,7 +22,112 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="313"/>
+            <point key="canvasLocation" x="246" y="531"/>
+        </scene>
+        <!--Story Description Controller-->
+        <scene sceneID="ANV-sx-Klh">
+            <objects>
+                <viewController storyboardIdentifier="StoryDescriptionController" id="V0V-A2-0tu" customClass="StoryDescriptionController" customModule="RopoFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9my-MJ-ibq"/>
+                        <viewControllerLayoutGuide type="bottom" id="jmI-PN-87H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FBw-E4-6eN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LHO-Pf-1qe">
+                                <rect key="frame" x="8" y="36" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5ka-sb-w54"/>
+                                    <constraint firstAttribute="height" constant="50" id="qMY-Mj-HkN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP4-10-INs">
+                                <rect key="frame" x="66" y="38" width="478" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="R8a-o4-MOT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DB-Zs-UaK">
+                                <rect key="frame" x="66" y="68" width="486" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="0Zn-TA-bkt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6R3-Bk-dXu">
+                                <rect key="frame" x="552" y="36" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cBH-PY-Snp"/>
+                                    <constraint firstAttribute="width" constant="40" id="dMZ-MF-Hmd"/>
+                                </constraints>
+                                <state key="normal" image="ic_unfollowing"/>
+                                <connections>
+                                    <action selector="didTapFollowButton:" destination="V0V-A2-0tu" eventType="touchUpInside" id="Ta1-ln-2bP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpc-l5-yKZ">
+                                <rect key="frame" x="8" y="98" width="584" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="NgY-sy-w3I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQD-2Q-1N0">
+                                <rect key="frame" x="8" y="143" width="584" height="449"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3DB-Zs-UaK" firstAttribute="top" secondItem="RP4-10-INs" secondAttribute="bottom" constant="5" id="3L1-Dw-cJ9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mQD-2Q-1N0" secondAttribute="trailing" constant="-12" id="5FW-ZI-2o3"/>
+                            <constraint firstItem="LHO-Pf-1qe" firstAttribute="leading" secondItem="FBw-E4-6eN" secondAttribute="leadingMargin" constant="-12" id="7Ia-bI-nce"/>
+                            <constraint firstItem="mQD-2Q-1N0" firstAttribute="top" secondItem="Hpc-l5-yKZ" secondAttribute="bottom" constant="10" id="7YP-lX-Gz4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6R3-Bk-dXu" secondAttribute="trailing" constant="-12" id="8eT-dq-upf"/>
+                            <constraint firstItem="RP4-10-INs" firstAttribute="leading" secondItem="LHO-Pf-1qe" secondAttribute="trailing" constant="8" id="A9O-Se-UHo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6R3-Bk-dXu" secondAttribute="trailing" constant="-20" id="Aib-Zk-eFB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hpc-l5-yKZ" secondAttribute="trailing" constant="-12" id="Gtw-aY-B0Z"/>
+                            <constraint firstItem="Hpc-l5-yKZ" firstAttribute="top" secondItem="LHO-Pf-1qe" secondAttribute="bottom" constant="12" id="Ldh-aK-hOo"/>
+                            <constraint firstItem="6R3-Bk-dXu" firstAttribute="leading" secondItem="RP4-10-INs" secondAttribute="trailing" constant="8" id="MGG-JJ-A4g"/>
+                            <constraint firstItem="mQD-2Q-1N0" firstAttribute="leading" secondItem="FBw-E4-6eN" secondAttribute="leadingMargin" constant="-12" id="MtF-Jg-auA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3DB-Zs-UaK" secondAttribute="trailing" constant="28" id="PWG-Ec-wf6"/>
+                            <constraint firstItem="Hpc-l5-yKZ" firstAttribute="leading" secondItem="FBw-E4-6eN" secondAttribute="leadingMargin" constant="-12" id="Q2s-fv-kWx"/>
+                            <constraint firstItem="LHO-Pf-1qe" firstAttribute="top" secondItem="9my-MJ-ibq" secondAttribute="bottom" constant="16" id="QOh-JX-8iC"/>
+                            <constraint firstItem="RP4-10-INs" firstAttribute="top" secondItem="9my-MJ-ibq" secondAttribute="bottom" constant="18" id="S7M-Nz-6cM"/>
+                            <constraint firstItem="6R3-Bk-dXu" firstAttribute="top" secondItem="9my-MJ-ibq" secondAttribute="bottom" constant="16" id="g08-nX-NzL"/>
+                            <constraint firstItem="jmI-PN-87H" firstAttribute="top" secondItem="mQD-2Q-1N0" secondAttribute="bottom" constant="8" id="kT7-8I-oVa"/>
+                            <constraint firstItem="3DB-Zs-UaK" firstAttribute="leading" secondItem="LHO-Pf-1qe" secondAttribute="trailing" constant="8" id="n7Y-Mb-qvr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Aib-Zk-eFB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="authorImageView" destination="LHO-Pf-1qe" id="RpD-bC-8IW"/>
+                        <outlet property="authorNameLabel" destination="RP4-10-INs" id="5J6-oi-Z7v"/>
+                        <outlet property="followButton" destination="6R3-Bk-dXu" id="DiH-Hx-zbX"/>
+                        <outlet property="subtitleLabel" destination="3DB-Zs-UaK" id="s4h-Nu-jie"/>
+                        <outlet property="titleLabel" destination="Hpc-l5-yKZ" id="ByT-Ed-gaF"/>
+                        <outlet property="webView" destination="mQD-2Q-1N0" id="Wxr-cE-d3o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2TG-dr-6wY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="-46"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_unfollowing" width="21" height="14"/>
+    </resources>
 </document>

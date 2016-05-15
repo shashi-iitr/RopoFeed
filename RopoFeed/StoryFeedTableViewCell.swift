@@ -40,7 +40,7 @@ class StoryFeedTableViewCell: UITableViewCell {
     @IBAction func didTapFollowButton(sender: UIButton) {
         delegate?.storyCell(self, didTapFollowButton: sender)
     }
-    
+        
     func configureCell(feed: Feed) -> Void {
         authorName.text = feed.username
         createdAtLabel.text = feed.verb
