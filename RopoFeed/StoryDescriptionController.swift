@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol StoryDescriptionControllerDelegate: class {
+    func storyDescriptionController(controller: StoryDescriptionController, didTapFollowButton sender: UIButton, feed: Feed)
+}
+
 class StoryDescriptionController: UIViewController, UIWebViewDelegate {
 
+    weak var delegate: StoryDescriptionControllerDelegate?
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -19,10 +24,11 @@ class StoryDescriptionController: UIViewController, UIWebViewDelegate {
     
     var feed: Feed?
     @IBAction func didTapFollowButton(sender: UIButton) {
+        toggleFollowButton(!(feed?.isFollowing)!)
+        delegate?.storyDescriptionController(self, didTapFollowButton: sender, feed: feed!)
     }
     
     override func awakeFromNib() {
-        
     }
     
     override func viewDidLoad() {
@@ -43,6 +49,10 @@ class StoryDescriptionController: UIViewController, UIWebViewDelegate {
     }
     
     func configureView() -> Void {
+        followButton.layer.masksToBounds = true
+        followButton.layer.cornerRadius = 3
+        followButton.layer.borderWidth = 1
+
         authorNameLabel.text = feed!.username
         authorImageView.setCachedImageWithURLString(feed!.imageURL, placeholderType: .Profile)
         if feed!.type == "story" {
@@ -51,6 +61,20 @@ class StoryDescriptionController: UIViewController, UIWebViewDelegate {
         } else {
             subtitleLabel.text = feed!.handle
             titleLabel.text = feed!.about
+        }
+        
+        toggleFollowButton((feed?.isFollowing)!)
+    }
+    
+    func toggleFollowButton(isFollowed: Bool) -> Void {
+        if isFollowed {
+            followButton.setImage(UIImage.init(named: "ic-following"), forState: .Normal)
+            followButton.backgroundColor = UIColor.ropoBlueColor()
+            followButton.layer.borderColor = UIColor.whiteColor().CGColor
+        } else {
+            followButton.setImage(UIImage.init(named: "ic_unfollowing"), forState: .Normal)
+            followButton.backgroundColor = UIColor.whiteColor()
+            followButton.layer.borderColor = UIColor.ropoBlueColor().CGColor
         }
     }
     

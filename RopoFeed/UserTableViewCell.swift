@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UserTableViewCellDelegate: class {
+    func userCell(cell: UserTableViewCell, didTapFollowButton sender: UIButton)
+}
+
 class UserTableViewCell: UITableViewCell {
 
     @IBOutlet weak var actorImageView: UIImageView! {
@@ -17,6 +21,7 @@ class UserTableViewCell: UITableViewCell {
             actorImageView.layer.borderWidth = 2.0
         }
     }
+    weak var delegate: UserTableViewCellDelegate?
     @IBOutlet weak var actorNameLabel: UILabel!
     @IBOutlet weak var handleLabel: UILabel!
     @IBOutlet weak var followCount: UILabel!
@@ -33,7 +38,10 @@ class UserTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        followButton.layer.masksToBounds = true
+        followButton.layer.cornerRadius = 3
+        followButton.layer.borderWidth = 1
+        followButton.layer.borderColor = UIColor.whiteColor().CGColor
     }
     
     func configureCell(feed: Feed) -> Void {
@@ -44,9 +52,19 @@ class UserTableViewCell: UITableViewCell {
         actorImageView.setCachedImageWithURLString(feed.imageURL, placeholderType: .Profile)
         backgroundImageView.setCachedImageWithURLString(feed.imageURL, placeholderType: .Item)
     }
-
+    
+    func toggleFollowButton(isFollowed: Bool) -> Void {
+        if isFollowed {
+            followButton.setTitle("following", forState: .Normal)
+            followButton.backgroundColor = UIColor.ropoGreenColor()
+        } else {
+            followButton.setTitle("follow", forState: .Normal)
+            followButton.backgroundColor = UIColor.clearColor()
+        }
+    }
+    
     @IBAction func didTapFollowButton(sender: UIButton) {
-        
+        delegate?.userCell(self, didTapFollowButton: sender)
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, StoryFeedTableViewCellDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, StoryFeedTableViewCellDelegate, UserTableViewCellDelegate, StoryDescriptionControllerDelegate {
     
     var shilpaShetty: Feed?
     var nargisFakhri: Feed?
@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var feeds = FeedFetcher.sharedInstance.fetchedFeeds()
         shilpaShetty = feeds[0]
         nargisFakhri = feeds[1]
-
+        
         for index in 2..<feeds.count {
             let feed = feeds[index]
             if feed.userId == shilpaShetty?.id {
@@ -56,14 +56,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     var feeds: [Feed] {
-        
         return FeedFetcher.sharedInstance.fetchedFeeds()
+    }
+    
+    // MARK: StoryDescriptionControllerDelegate
+    
+    func storyDescriptionController(controller: StoryDescriptionController, didTapFollowButton sender: UIButton, feed: Feed) -> Void {
+        changeFollowStatusWith(feed)
+        tableView.reloadData()
+    }
+    
+    // MARK: UserTableViewCellDelegate
+    
+    func userCell(cell: UserTableViewCell, didTapFollowButton sender: UIButton) -> Void {
+        let indexPath = tableView .indexPathForCell(cell)
+        changeFollowStatusWith((indexPath?.row == 0 ? shilpaShetty : nargisFakhri)!)
+        tableView.reloadData()
     }
     
     // MARK: StoryFeedTableViewCellDelegate
     
     func storyCell(cell: StoryFeedTableViewCell, didTapFollowButton sender: UIButton) {
-    
+        let indexPath = tableView .indexPathForCell(cell)
+        let feed = storyFeeds[(indexPath!.row / 2) - 2]
+        changeFollowStatusWith(feed)
+        tableView.reloadData()
     }
     
     func storyCell(cell: StoryFeedTableViewCell, didTapImageView imageView: UIImageView) {
@@ -77,29 +94,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row % 2 != 0 {
-            let cell: EmptyCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.selectionStyle = .None
-            
-            return cell
-        } else {
+        if indexPath.row % 2 == 0 {
             if indexPath.row == 0 {
                 let cell: UserTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.configureCell(shilpaShetty!)
+                cell.toggleFollowButton((shilpaShetty?.isFollowing!)!)
                 cell.selectionStyle = .None
+                cell.delegate = self
                 
                 return cell
-                
             } else if indexPath.row == 2 {
                 let cell: UserTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.configureCell(nargisFakhri!)
+                cell.toggleFollowButton((nargisFakhri?.isFollowing!)!)
                 cell.selectionStyle = .None
+                cell.delegate = self
                 
                 return cell
-                
             } else {
                 let cell: StoryFeedTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-                cell.configureCell(storyFeeds[(indexPath.row / 2) - 2])
+                let feed = storyFeeds[(indexPath.row / 2) - 2]
+                cell.configureCell(feed)
+                cell.toggleFollowButton(feed.isFollowing!)
                 cell.selectionStyle = .None
                 cell.delegate = self
                 
@@ -107,7 +123,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
         
-        return UITableViewCell.init()
+        let cell: EmptyCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.selectionStyle = .None
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -123,6 +142,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let mainStoryboard: UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
         let storyVC: StoryDescriptionController = mainStoryboard.instantiateViewControllerWithIdentifier("StoryDescriptionController") as! StoryDescriptionController
+        storyVC.delegate = self;
         let navC: UINavigationController = UINavigationController.init(rootViewController: storyVC)
         var feed: Feed?
         if indexPath.row % 2 == 0 {
@@ -137,7 +157,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         storyVC.feed = feed
         self.presentViewController(navC, animated: true, completion: nil)
     }
-
+    
+    // MARK: Helpers
+    
+    func changeFollowStatusWith(feed: Feed) -> Void {
+        if feed.type == "story" {
+            checkForStory(feed.userId!)
+            checkForUser(feed.userId!)
+        } else {
+            checkForUser(feed.id!)
+            checkForStory(feed.id!)
+        }
+    }
+    
+    func checkForStory(id: String) -> Void {
+        for story in storyFeeds {
+            if id == story.userId {
+                story.isFollowing = !story.isFollowing!
+            }
+        }
+    }
+    
+    func checkForUser(id: String) -> Void {
+        if id == shilpaShetty?.id {
+            shilpaShetty?.isFollowing = !(shilpaShetty?.isFollowing!)!
+        } else if id == nargisFakhri?.id {
+            nargisFakhri?.isFollowing = !(nargisFakhri?.isFollowing!)!
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

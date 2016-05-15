@@ -23,6 +23,7 @@ class StoryFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var storyImageView: UIImageView! {
         didSet {
             let tapGestureRecognizer =  UITapGestureRecognizer(target: self, action:#selector(StoryFeedTableViewCell.handleImageViewTapGesture(_:)))
@@ -30,17 +31,17 @@ class StoryFeedTableViewCell: UITableViewCell {
             storyImageView.addGestureRecognizer(tapGestureRecognizer)
         }
     }
-    @IBOutlet weak var followButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         storyImageView.contentMode = .ScaleAspectFill
         storyImageView.layer.masksToBounds = true
+        followButton.layer.masksToBounds = true
+        followButton.layer.cornerRadius = 3
+        followButton.layer.borderWidth = 1
     }
 
-    @IBAction func didTapFollowButton(sender: UIButton) {
-        delegate?.storyCell(self, didTapFollowButton: sender)
-    }
-        
+    
     func configureCell(feed: Feed) -> Void {
         authorName.text = feed.username
         createdAtLabel.text = feed.verb
@@ -51,6 +52,24 @@ class StoryFeedTableViewCell: UITableViewCell {
         
         authorImageView.setCachedImageWithURLString(feed.imageURL, placeholderType: .Profile)
         storyImageView.setCachedImageWithURLString(feed.si, placeholderType: .Item)
+    }
+    
+    func toggleFollowButton(isFollowed: Bool) -> Void {
+        if isFollowed {
+            followButton.setImage(UIImage.init(named: "ic-following"), forState: .Normal)
+            followButton.backgroundColor = UIColor.ropoBlueColor()
+            followButton.layer.borderColor = UIColor.whiteColor().CGColor
+        } else {
+            followButton.setImage(UIImage.init(named: "ic_unfollowing"), forState: .Normal)
+            followButton.backgroundColor = UIColor.whiteColor()
+            followButton.layer.borderColor = UIColor.ropoBlueColor().CGColor
+        }
+    }
+    
+    //MARK: Actions
+    
+    @IBAction func didTapFollowButton(sender: UIButton) {
+        delegate?.storyCell(self, didTapFollowButton: sender)
     }
     
     func handleImageViewTapGesture(gesture: UIGestureRecognizer) -> Void {

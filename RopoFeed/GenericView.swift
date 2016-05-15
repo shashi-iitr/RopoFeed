@@ -164,3 +164,24 @@ extension UIViewController {
         imageViewer.showFromViewController(self, transition: .FromOriginalPosition)
     }
 }
+
+extension UIColor {
+    
+    class func ropoGreenColor() -> UIColor {
+        return UIColor.rgb(0,157,65)
+    }
+    
+    class func ropoBlueColor() -> UIColor {
+        return rgb(66, 171, 231)
+    }
+    
+    // MARK: - Convenience Methods
+    
+    class func rgb(red:CGFloat, _ green:CGFloat, _ blue:CGFloat) -> UIColor {
+        return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: 1.0)
+    }
+    
+    class func rgba(red:CGFloat, _ green:CGFloat, _ blue:CGFloat, _ alpha:CGFloat) -> UIColor {
+        return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
+    }
+}
