@@ -16,6 +16,16 @@
 		9B4110A51CE703A700C783C6 /* RopoFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4110A41CE703A700C783C6 /* RopoFeedTests.swift */; };
 		9B4110B01CE703A700C783C6 /* RopoFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4110AF1CE703A700C783C6 /* RopoFeedUITests.swift */; };
 		9B4110BE1CE70A6A00C783C6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9B4110BD1CE70A6A00C783C6 /* .gitignore */; };
+		9B4110C01CE70D1500C783C6 /* FeedFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4110BF1CE70D1500C783C6 /* FeedFetcher.swift */; };
+		9B4110C21CE70D7A00C783C6 /* roposofeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B4110C11CE70D7A00C783C6 /* roposofeed.json */; };
+		9B4110CD1CE730DA00C783C6 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4110CC1CE730DA00C783C6 /* Feed.swift */; };
+		9B6FC7461CE7433900ED1613 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FC7441CE7433900ED1613 /* UserTableViewCell.swift */; };
+		9B6FC7471CE7433900ED1613 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FC7451CE7433900ED1613 /* UserTableViewCell.xib */; };
+		9B6FC74A1CE7434C00ED1613 /* StoryFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FC7481CE7434C00ED1613 /* StoryFeedTableViewCell.swift */; };
+		9B6FC74B1CE7434C00ED1613 /* StoryFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FC7491CE7434C00ED1613 /* StoryFeedTableViewCell.xib */; };
+		9B6FC74D1CE7598900ED1613 /* GenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FC74C1CE7598900ED1613 /* GenericView.swift */; };
+		9BA8B8601CE84F3200C95B47 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8B85F1CE84F3200C95B47 /* EmptyCell.swift */; };
+		9BA8B8651CE85B5800C95B47 /* StoryDescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8B8641CE85B5800C95B47 /* StoryDescriptionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +62,16 @@
 		9B4110AF1CE703A700C783C6 /* RopoFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RopoFeedUITests.swift; sourceTree = "<group>"; };
 		9B4110B11CE703A700C783C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B4110BD1CE70A6A00C783C6 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9B4110BF1CE70D1500C783C6 /* FeedFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedFetcher.swift; sourceTree = "<group>"; };
+		9B4110C11CE70D7A00C783C6 /* roposofeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = roposofeed.json; sourceTree = "<group>"; };
+		9B4110CC1CE730DA00C783C6 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		9B6FC7441CE7433900ED1613 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		9B6FC7451CE7433900ED1613 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		9B6FC7481CE7434C00ED1613 /* StoryFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryFeedTableViewCell.swift; sourceTree = "<group>"; };
+		9B6FC7491CE7434C00ED1613 /* StoryFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryFeedTableViewCell.xib; sourceTree = "<group>"; };
+		9B6FC74C1CE7598900ED1613 /* GenericView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericView.swift; sourceTree = "<group>"; };
+		9BA8B85F1CE84F3200C95B47 /* EmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		9BA8B8641CE85B5800C95B47 /* StoryDescriptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDescriptionController.swift; sourceTree = "<group>"; };
 		F7957D434A189F53BB84D5C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,8 +143,12 @@
 		9B41108E1CE703A700C783C6 /* RopoFeed */ = {
 			isa = PBXGroup;
 			children = (
+				9BA8B8631CE85B0C00C95B47 /* Manager */,
+				9BA8B8621CE85B0200C95B47 /* Model */,
+				9BA8B8611CE85AD400C95B47 /* Controllers */,
+				9B4110CE1CE741B600C783C6 /* View */,
+				9B4110C11CE70D7A00C783C6 /* roposofeed.json */,
 				9B41108F1CE703A700C783C6 /* AppDelegate.swift */,
-				9B4110911CE703A700C783C6 /* ViewController.swift */,
 				9B4110BD1CE70A6A00C783C6 /* .gitignore */,
 				9B4110931CE703A700C783C6 /* Main.storyboard */,
 				9B4110961CE703A700C783C6 /* Assets.xcassets */,
@@ -150,6 +174,44 @@
 				9B4110B11CE703A700C783C6 /* Info.plist */,
 			);
 			path = RopoFeedUITests;
+			sourceTree = "<group>";
+		};
+		9B4110CE1CE741B600C783C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B6FC7441CE7433900ED1613 /* UserTableViewCell.swift */,
+				9B6FC7451CE7433900ED1613 /* UserTableViewCell.xib */,
+				9B6FC7481CE7434C00ED1613 /* StoryFeedTableViewCell.swift */,
+				9B6FC7491CE7434C00ED1613 /* StoryFeedTableViewCell.xib */,
+				9B6FC74C1CE7598900ED1613 /* GenericView.swift */,
+				9BA8B85F1CE84F3200C95B47 /* EmptyCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9BA8B8611CE85AD400C95B47 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9B4110911CE703A700C783C6 /* ViewController.swift */,
+				9BA8B8641CE85B5800C95B47 /* StoryDescriptionController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9BA8B8621CE85B0200C95B47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B4110CC1CE730DA00C783C6 /* Feed.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9BA8B8631CE85B0C00C95B47 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9B4110BF1CE70D1500C783C6 /* FeedFetcher.swift */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +324,9 @@
 				9B4110BE1CE70A6A00C783C6 /* .gitignore in Resources */,
 				9B41109A1CE703A700C783C6 /* LaunchScreen.storyboard in Resources */,
 				9B4110971CE703A700C783C6 /* Assets.xcassets in Resources */,
+				9B4110C21CE70D7A00C783C6 /* roposofeed.json in Resources */,
+				9B6FC7471CE7433900ED1613 /* UserTableViewCell.xib in Resources */,
+				9B6FC74B1CE7434C00ED1613 /* StoryFeedTableViewCell.xib in Resources */,
 				9B4110951CE703A700C783C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,8 +400,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6FC74D1CE7598900ED1613 /* GenericView.swift in Sources */,
+				9B4110CD1CE730DA00C783C6 /* Feed.swift in Sources */,
+				9B6FC74A1CE7434C00ED1613 /* StoryFeedTableViewCell.swift in Sources */,
+				9BA8B8651CE85B5800C95B47 /* StoryDescriptionController.swift in Sources */,
 				9B4110921CE703A700C783C6 /* ViewController.swift in Sources */,
 				9B4110901CE703A700C783C6 /* AppDelegate.swift in Sources */,
+				9B6FC7461CE7433900ED1613 /* UserTableViewCell.swift in Sources */,
+				9B4110C01CE70D1500C783C6 /* FeedFetcher.swift in Sources */,
+				9BA8B8601CE84F3200C95B47 /* EmptyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

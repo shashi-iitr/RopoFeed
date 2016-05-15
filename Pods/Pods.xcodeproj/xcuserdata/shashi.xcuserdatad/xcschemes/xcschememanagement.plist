@@ -4,12 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
+		<key>HanekeSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AlamofireImage.xcscheme</key>
+		<key>JTSImageViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05094CC4A047119F7ADC14EE74C4881C</key>
+		<key>7DDF79495F24B309AF089ACC99FC1151</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>9F5CF7F3E7BFD4643F305DC0858054CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7F7488358D10D4B2FEF4C228C4383AE0</key>
+		<key>D5D6200D4BE741574DBD4FB768A6F55B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAE26C46CFBAF39E4C96ABF16B93D9FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
