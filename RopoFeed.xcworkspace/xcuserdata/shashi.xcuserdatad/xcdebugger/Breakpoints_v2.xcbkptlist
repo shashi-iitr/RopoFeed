@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RopoFeed/ViewController.swift"
-            timestampString = "485002249.385002"
+            timestampString = "485004893.535987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "configureStories()"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RopoFeed/ViewController.swift"
-            timestampString = "485002965.195877"
+            timestampString = "485004893.535987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "storyDescriptionController(_:didTapFollowButton:feed:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RopoFeed/ViewController.swift"
-            timestampString = "485002986.66499"
+            timestampString = "485004893.535987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "changeFollowStatusWith(_:)"
             landmarkType = "5">
          </BreakpointContent>

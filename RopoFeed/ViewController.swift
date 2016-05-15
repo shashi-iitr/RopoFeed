@@ -63,7 +63,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func storyDescriptionController(controller: StoryDescriptionController, didTapFollowButton sender: UIButton, feed: Feed) -> Void {
         changeFollowStatusWith(feed)
-        tableView.reloadData()
     }
     
     // MARK: UserTableViewCellDelegate
@@ -71,7 +70,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func userCell(cell: UserTableViewCell, didTapFollowButton sender: UIButton) -> Void {
         let indexPath = tableView .indexPathForCell(cell)
         changeFollowStatusWith((indexPath?.row == 0 ? shilpaShetty : nargisFakhri)!)
-        tableView.reloadData()
     }
     
     // MARK: StoryFeedTableViewCellDelegate
@@ -80,7 +78,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let indexPath = tableView .indexPathForCell(cell)
         let feed = storyFeeds[(indexPath!.row / 2) - 2]
         changeFollowStatusWith(feed)
-        tableView.reloadData()
     }
     
     func storyCell(cell: StoryFeedTableViewCell, didTapImageView imageView: UIImageView) {
@@ -171,9 +168,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func checkForStory(id: String) -> Void {
-        for story in storyFeeds {
+        for index in 0..<storyFeeds.count {
+            let story = storyFeeds[index]
             if id == story.userId {
                 story.isFollowing = !story.isFollowing!
+                let indexPath = NSIndexPath.init(forRow: (index + 2) * 2, inSection: 0)
+                let cell: StoryFeedTableViewCell? = tableView.cellForRowAtIndexPath(indexPath) as? StoryFeedTableViewCell
+                if let newCell = cell {
+                    newCell.toggleFollowButton(story.isFollowing!)
+                }
             }
         }
     }
@@ -181,8 +184,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func checkForUser(id: String) -> Void {
         if id == shilpaShetty?.id {
             shilpaShetty?.isFollowing = !(shilpaShetty?.isFollowing!)!
+            let indexPath = NSIndexPath.init(forRow: 0, inSection: 0)
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as? UserTableViewCell
+            if let newCell = cell {
+                newCell.toggleFollowButton((shilpaShetty?.isFollowing!)!)
+            }
         } else if id == nargisFakhri?.id {
             nargisFakhri?.isFollowing = !(nargisFakhri?.isFollowing!)!
+            let indexPath = NSIndexPath.init(forRow: 2, inSection: 0)
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as? UserTableViewCell
+            if let newCell = cell {
+                newCell.toggleFollowButton((nargisFakhri?.isFollowing!)!)
+            }
         }
     }
     
