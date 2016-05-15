@@ -17,6 +17,7 @@ class StoryDescriptionController: UIViewController, UIWebViewDelegate {
     weak var delegate: StoryDescriptionControllerDelegate?
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var webView: UIWebView!
@@ -36,6 +37,7 @@ class StoryDescriptionController: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         addBarButtonItem()
         configureView()
+        indicatorView.startAnimating()
         loadContent()
     }
     
@@ -45,6 +47,12 @@ class StoryDescriptionController: UIViewController, UIWebViewDelegate {
     }
     
     func dismissVC(sender: UIBarButtonItem) -> Void {
+        feed = nil
+        if webView.loading {
+            webView.stopLoading()
+        }
+        webView.delegate = nil
+        webView .removeFromSuperview()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -53,17 +61,19 @@ class StoryDescriptionController: UIViewController, UIWebViewDelegate {
         followButton.layer.cornerRadius = 3
         followButton.layer.borderWidth = 1
 
-        authorNameLabel.text = feed!.username
-        authorImageView.setCachedImageWithURLString(feed!.imageURL, placeholderType: .Profile)
-        if feed!.type == "story" {
-            subtitleLabel.text = feed!.verb
-            titleLabel.text = feed!.title
-        } else {
-            subtitleLabel.text = feed!.handle
-            titleLabel.text = feed!.about
+        if let newFeed = feed {
+            authorNameLabel.text = newFeed.username
+            authorImageView.setCachedImageWithURLString(newFeed.imageURL, placeholderType: .Profile)
+            if newFeed.type == "story" {
+                subtitleLabel.text = newFeed.verb
+                titleLabel.text = newFeed.title
+            } else {
+                subtitleLabel.text = newFeed.handle
+                titleLabel.text = newFeed.about
+            }
+            
+            toggleFollowButton((newFeed.isFollowing)!)
         }
-        
-        toggleFollowButton((feed?.isFollowing)!)
     }
     
     func toggleFollowButton(isFollowed: Bool) -> Void {
@@ -90,6 +100,7 @@ class StoryDescriptionController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        indicatorView.stopAnimating()
         print("loaded")
     }
     

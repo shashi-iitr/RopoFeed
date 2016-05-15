@@ -85,6 +85,13 @@
                                 <rect key="frame" x="8" y="143" width="584" height="449"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Xcp-Aj-SK9">
+                                <rect key="frame" x="290" y="143" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Kih-Lz-1m8"/>
+                                    <constraint firstAttribute="width" constant="20" id="wuV-cW-Iyc"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -95,6 +102,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="6R3-Bk-dXu" secondAttribute="trailing" constant="-12" id="8eT-dq-upf"/>
                             <constraint firstItem="RP4-10-INs" firstAttribute="leading" secondItem="LHO-Pf-1qe" secondAttribute="trailing" constant="8" id="A9O-Se-UHo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6R3-Bk-dXu" secondAttribute="trailing" constant="-20" id="Aib-Zk-eFB"/>
+                            <constraint firstItem="Xcp-Aj-SK9" firstAttribute="top" secondItem="Hpc-l5-yKZ" secondAttribute="bottom" constant="10" id="F0A-pv-pIQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Hpc-l5-yKZ" secondAttribute="trailing" constant="-12" id="Gtw-aY-B0Z"/>
                             <constraint firstItem="Hpc-l5-yKZ" firstAttribute="top" secondItem="LHO-Pf-1qe" secondAttribute="bottom" constant="12" id="Ldh-aK-hOo"/>
                             <constraint firstItem="6R3-Bk-dXu" firstAttribute="leading" secondItem="RP4-10-INs" secondAttribute="trailing" constant="8" id="MGG-JJ-A4g"/>
@@ -103,6 +111,7 @@
                             <constraint firstItem="Hpc-l5-yKZ" firstAttribute="leading" secondItem="FBw-E4-6eN" secondAttribute="leadingMargin" constant="-12" id="Q2s-fv-kWx"/>
                             <constraint firstItem="LHO-Pf-1qe" firstAttribute="top" secondItem="9my-MJ-ibq" secondAttribute="bottom" constant="16" id="QOh-JX-8iC"/>
                             <constraint firstItem="RP4-10-INs" firstAttribute="top" secondItem="9my-MJ-ibq" secondAttribute="bottom" constant="18" id="S7M-Nz-6cM"/>
+                            <constraint firstItem="Xcp-Aj-SK9" firstAttribute="centerX" secondItem="FBw-E4-6eN" secondAttribute="centerX" id="UNH-nm-97M"/>
                             <constraint firstItem="6R3-Bk-dXu" firstAttribute="top" secondItem="9my-MJ-ibq" secondAttribute="bottom" constant="16" id="g08-nX-NzL"/>
                             <constraint firstItem="jmI-PN-87H" firstAttribute="top" secondItem="mQD-2Q-1N0" secondAttribute="bottom" constant="8" id="kT7-8I-oVa"/>
                             <constraint firstItem="3DB-Zs-UaK" firstAttribute="leading" secondItem="LHO-Pf-1qe" secondAttribute="trailing" constant="8" id="n7Y-Mb-qvr"/>
@@ -117,6 +126,7 @@
                         <outlet property="authorImageView" destination="LHO-Pf-1qe" id="RpD-bC-8IW"/>
                         <outlet property="authorNameLabel" destination="RP4-10-INs" id="5J6-oi-Z7v"/>
                         <outlet property="followButton" destination="6R3-Bk-dXu" id="DiH-Hx-zbX"/>
+                        <outlet property="indicatorView" destination="Xcp-Aj-SK9" id="ODY-52-SiM"/>
                         <outlet property="subtitleLabel" destination="3DB-Zs-UaK" id="s4h-Nu-jie"/>
                         <outlet property="titleLabel" destination="Hpc-l5-yKZ" id="ByT-Ed-gaF"/>
                         <outlet property="webView" destination="mQD-2Q-1N0" id="Wxr-cE-d3o"/>

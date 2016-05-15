@@ -55,35 +55,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    // MARK: StoryDescriptionControllerDelegate
-    
-    func storyDescriptionController(controller: StoryDescriptionController, didTapFollowButton sender: UIButton, feed: Feed) -> Void {
-        changeFollowStatusWith(feed)
-    }
-    
-    // MARK: UserTableViewCellDelegate
-    
-    func userCell(cell: UserTableViewCell, didTapFollowButton sender: UIButton) -> Void {
-        let indexPath = tableView .indexPathForCell(cell)
-        changeFollowStatusWith((indexPath?.row == 0 ? shilpaShetty : nargisFakhri)!)
-    }
-    
-    // MARK: StoryFeedTableViewCellDelegate
-    
-    func storyCell(cell: StoryFeedTableViewCell, didTapFollowButton sender: UIButton) {
-        let indexPath = tableView .indexPathForCell(cell)
-        let feed = storyFeeds[(indexPath!.row / 2) - 2]
-        changeFollowStatusWith(feed)
-    }
-    
-    func storyCell(cell: StoryFeedTableViewCell, didTapImageView imageView: UIImageView) {
-        openImageViewer(fromImageView: imageView)
-    }
-    
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (storyFeeds.count + 2) * 2 - 1
+        return (storyFeeds.count + 2) * 2 - 1 // 2 user + stories + empty cells
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -149,6 +124,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         storyVC.feed = feed
         self.presentViewController(navC, animated: true, completion: nil)
+    }
+    
+    // MARK: StoryDescriptionControllerDelegate
+    
+    func storyDescriptionController(controller: StoryDescriptionController, didTapFollowButton sender: UIButton, feed: Feed) -> Void {
+        changeFollowStatusWith(feed)
+    }
+    
+    // MARK: UserTableViewCellDelegate
+    
+    func userCell(cell: UserTableViewCell, didTapFollowButton sender: UIButton) -> Void {
+        let indexPath = tableView .indexPathForCell(cell)
+        changeFollowStatusWith((indexPath?.row == 0 ? shilpaShetty : nargisFakhri)!)
+    }
+    
+    // MARK: StoryFeedTableViewCellDelegate
+    
+    func storyCell(cell: StoryFeedTableViewCell, didTapFollowButton sender: UIButton) {
+        let indexPath = tableView .indexPathForCell(cell)
+        let feed = storyFeeds[(indexPath!.row / 2) - 2]
+        changeFollowStatusWith(feed)
+    }
+    
+    func storyCell(cell: StoryFeedTableViewCell, didTapImageView imageView: UIImageView) {
+        openImageViewer(fromImageView: imageView)
     }
     
     // MARK: Helpers
